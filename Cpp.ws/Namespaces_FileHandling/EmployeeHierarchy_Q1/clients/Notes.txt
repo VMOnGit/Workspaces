@@ -1,0 +1,34 @@
+## Inheritance in C++ ##
+- It is a process by which one object can acquire the properties of another object
+- Broad category(base class) is formed and then sub categories are formed (derived class)
+- "is-a" kind of relationship/hierarchy
+- Types:
+- Single level  A->B
+- Multi-level   A->B->C
+- Multiple Inheritance C->A & C->B
+- Diamond Inheritance  D->B D->C  B->A  C->A
+
+- Syntax:
+- Class derived_class:mode base_class
+- Mode of inheritance has to be given as per our requirement 
+- Default Mode is private
+- Modes: Private, Protected, Public
+
+Class B: Private A
+ __________
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|
+
+
+- Member Intializer List
+- The sequence of variables on constructor list has to same as in declaration
+- Sequence of elements in MIL should be matching with the constructor of its own class
+- Sequence of class in MIL does not matter
+- Variables passed in MIL are the one which are in constructor list
+- MIL used when const is in your parameter list or avoid unnecessary constructor calls as it will invoke parametrized constructor directly
+

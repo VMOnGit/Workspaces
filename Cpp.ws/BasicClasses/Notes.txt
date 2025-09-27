@@ -1,0 +1,90 @@
+- CLASSES AND OBJECT
+- Structure in C
+- Collection of different data types in one block
+- Contains variables only
+- All data is global so any function or file can access it easily
+
+- Structure in C++
+- Collection of variables and fucntions
+- By default data is not secured
+- also can explicitly give privilege to secure data i.e data will no longer be global
+
+-Eg:
+ struct Employee
+ { 
+  	int eid;
+  	char name[20];
+  	void accept()
+  	{
+  		//executable logic
+  	}
+  	void display()
+  	{
+  		//executable logic
+  	}
+  };
+ 
+- Class in C++
+- Same as structure in C++
+- All data is by default private
+- Class fulfils Abstraction and Encapsulation
+- Contain Access Specifier(::)
+
+- Access Specifier means specifying the access of any member
+- Access Modifier are Private,Protected Or Public
+
+class Demo
+{
+private:
+int n;
+public:
+void display()
+	{
+	cout<<n;
+	}
+}
+main()
+	{
+		Demo d1; //object
+	}
+	
+- Memory is allocated for object. But it is never allocated for class
+
+- OBJECT
+- An  object is instance of class
+- Object can access only public members of class
+- Memory for object is allocated and not for class
+- Whenever an object is created , memory is allocated, constructor is allocated and memory is initialized
+
+- CONSTRUCTOR
+- Special member function of class iwth name as class name
+- Constructor never have any return-pe
+- Constructors are called implicitly when an object is created
+- Constructor is called only once at object creation
+- It actually helps to intialize an object and not to construct
+
+- Constructor can be overloaded
+- Types of constructor are Default,Parametrized and Copy Constructor
+- Constructor overloading must follow all rules of function overloading
+- In a class, you can have only one default constructor and multiple parametrized constructor
+
+- MEMBER FUNCTION IN CLASS
+- Types
+- Facilitator (Display())
+- Accessor    (accept(),getter())
+- Mutator     (setter())
+- Helper      (friend(),private functions())
+
+- 'this' Pointer
+- 'this' is keyword in c++
+- Every function has hidden parameter which is 'this'
+- It always holds the address of current invoking object
+- Always recreated and re-intialized as per objects address
+
+- Static in C++
+- Static keyword can be used to get updated value of local variable between different function calls
+- Static means single copy exists.Once created same copy is shared by all objects.
+- Static functions are also available in C++
+- These functions can access only stativ data member
+- Used to call public member function without object creation
+- 
