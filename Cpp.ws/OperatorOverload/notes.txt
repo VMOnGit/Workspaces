@@ -1,0 +1,58 @@
+## In-built functions wont work on user built data types
+- OPERATOR OVERLOADING
+- Eg: int n=10,n2=20
+- int n3=n1+n2
+- This works fine since we are built in data types
+
+- Type 1::c1.add(c2,c3)		//c1 has "this" pointer
+- Type 2::c1=c2+c3
+- Thus, for addition compiler does not understand what operation to perform with UDTS
+- This is solved by Operator Overloading
+- Adding UDTS will give error unless its defined
+-Syntax:
+- return-type operator#(parameter)
+- where,operator is keyword
+- # will be replaced with the operator
+- Eg:void operator+()
+
+- c1=c2.operator+c3
+- c2 is 'this' operator
+
+Eg:
+Complex::Complex operator+(Complex &c)
+{
+	Complex temp;
+	temp.Real=this->Real+c.Real;
+	temp.Imag=this->Imag+c.Imag;
+}
+
+
+- Binary Operator Overloading
+- eg:+(addition) i.e. c1=c2+c3
+- compiler resolves as ::c1=c2.operator+(c3);
+- Here, always LHS operant will invoke operator function and RHS operant will be passed as a parameter 
+
+- Unary Operators:
+- The compiler checks for operator-operand order to differentiate between different unary operators like pre and post increment.
+- Complex Complex:: operator++()	//Pre Increment
+{
+	this->real++;
+	this->imag++;
+	return (*this);
+}
+
+Complex Complex:: operator++(int n)	//Post-Increment, int n is for compiler(fn over)
+
+- Unary Operator
+- Unary minus(-) i.e. c1=-c2
+
+- This will negate object 
+
+- RULES
+- Never change precedence of operators
+- Never change arity of operator
+- Never change meaning/functionality of operator
+- Never generate any new operators
+
+- Operators that cannot be overloaded
+.(dot),::,?:,sizeof(),typeid()

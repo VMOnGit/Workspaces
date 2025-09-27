@@ -1,0 +1,35 @@
+- DESTRUCTOR
+- Special member of your class having same name as class_name
+- Destructor will always de-allocate memory
+- Syntactically it will precede with tilde sign(-)
+- Implicitly provided by compiler which deallocates memory allocated for object on stack
+- When pointer is data-member of class, it is mandatory to implement user-defined destructor
+- Object creation is top-bottom and destructor is bottom-top
+- It is never overloaded
+
+ ____________        ______________
+|            |      |    |    |    |
+| ptr=1000   | ---->|    |    |    |
+|____________|      |____|____|____|
+                     1000
+   Stack                  Heap
+                   
+
+
+-- Copy Constructor
+
+-Whenever object is passed compiler provides built in copy constructor
+
+-This does member wise copy of values from all lmember from original object into copied object
+
+-Pointers in this case refer to same memory locations
+
+-When one of those is deallocated the other does not have a memory location causing "dangling pointer situation"                   
+
+-Solution for Dangling Pointer
+	1. const: since we are creating one object as copy of another object
+	
+	2.User Defined Copy Function: This will allow for assigning different memory for both
+	pointers.
+	
+

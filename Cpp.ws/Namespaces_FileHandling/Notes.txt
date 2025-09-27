@@ -1,0 +1,185 @@
+- Generic Pointer
+- Pointer of the base class that old the address of its own derived class from its hierachy
+- It belongs to general class of heirachy or base class
+
+- Polymorphism
+- Types
+- Run-time and Complie-time
+- Compile Time also referred to as early binding achieved by function overloading and operator overloading
+- Runtime Polymorphism;
+- eg: Date *dptr=new Date();
+- dptr->display();
+
+- Run-time polymorphism is also called as late binding , dynamic binding and can achieved by using generic pointer,function overrding and virtual keyword
+
+- virtual void display() is example of function overriding 
+
+- Function Overridding
+- Same Function name
+- Same signature (No. of parameters,data type and sequece of parameters)
+- Same return_type
+- But scope is different(different classes of heirachy)
+
+Overloading                   |  Overriding
+______________________________|__________________________
+1)Same Function Name          |  Same Function Name
+2) Different signature        |  Same Signature
+3)return_type not considered  |  Same return type
+4)Same Scope                  |
+                              |
+ 
+- Run-time Polymorphism
+- Only overidden functions are called generic pointer
+- Overidden functions is declared as virtual with only func_declaration in base class only
+- once declared  a function as virtual in base class it is implicitly treated as virtual in all derived classes
+- Only overidden function are reated as virtual 
+- A class consisting of atleast one virtual function is termed as a "Polymorphic class"
+
+Stack     Heap
+
+eptr----->vptr------>     VTABLE 
+1000      1000             0------->Display()
+500       eid,age        ->1------->Accept()
+          name,dm,y     |
+          h,r           |
+                        |
+eptr2---->vptr----------
+2000      2000
+789       Manager         
+
+- Working of Virtual Keyboard
+- virtual once declared in base class will be implicitly considered as virtual through-out the heirachy   
+- Any class having atleast one virtual function is called as Polymorphic class
+- Object created of any polymorphic class will have special pointer on top of memory (VPTR)
+- Vptr is separate for every object
+- Vtable is static,i.e. single copy
+- Vtable will store address of only virtual functions
+- All vptr will point to Vtable
+
+-- Absract Class
+- A class containing at least one pure virtual function is called Abstract class
+- Reference/pointer of abstract class can be created
+- pure virtual fn doesnt have definitoin or executable code
+- These must be defined in atleast one derived class otherwise derived is also treated 
+   as abstract class.
+   
+-- Downcasting is casting from base class to derived cast
+- Never use static cast
+
+- syntax:
+	dynamic_cast<'Class_name'*>('pointer_name');	\recasts to 'Class_name'
+
+- This is done at runtime
+- Eg:
+- Type 1: dynamic_cast<Manager*>(eptr)->bonus();
+- Type 2:Manager *mgr=dynamic_cast<Manager*>(eptr);
+			mgr->bonus();
+		
+-Typecasting is changing from one type to another thus, can be implemented using static_cast operator
+- bad pratice to use static_cast for downcasting since object creation is not compile time
+- Always use only dynamic_cast operator for downcasting in the heirarchy
+
+--RunTime Type Identification
+- If object is created at run-time we need to confirm thetypr of object before next process
+- To check type of object created at runtime type id() is an operator for RTTI
+- Eg:
+- typeid(WageEmployee) here,parameter is considered some object
+- typeid(class WageEmployee) here,parameter is considered as class
+- typeid(pointer_name) here,pointer's data-type is considered
+- typeid(*pointer_name) here,value in pointer will be used
+
+--Virtual Destructor
+- Using generic pointer if we create derived class object at runtime later,at object deallocation the memory for entire object must be released
+- Destructor will release memory for only base class
+- In order to invoke destructors for all classes of heirarchy we must use virtual destructor		
+- Syntactically:virtual keyword in used with base class destructor only
+- Constructors are never virtual			
+			
+-- Namespaces:
+- Used to avoid re-definition error, ambigious call  to members with same names in an 		
+  application.			
+- syntax:
+
+	namespace user_defined_name{
+		vars, globals,etc
+	}			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
