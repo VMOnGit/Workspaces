@@ -1,4 +1,4 @@
-//class employee
+
 #pragma once
 #include<iostream>
 #include<string.h>
