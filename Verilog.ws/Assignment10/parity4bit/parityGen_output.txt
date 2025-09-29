@@ -1,0 +1,16 @@
+| parity bit = 0 | input sequence = 0000 |
+| parity bit = 1 | input sequence = 0001 |
+| parity bit = 1 | input sequence = 0010 |
+| parity bit = 0 | input sequence = 0011 |
+| parity bit = 1 | input sequence = 0100 |
+| parity bit = 0 | input sequence = 0101 |
+| parity bit = 0 | input sequence = 0110 |
+| parity bit = 1 | input sequence = 0111 |
+| parity bit = 1 | input sequence = 1000 |
+| parity bit = 0 | input sequence = 1001 |
+| parity bit = 0 | input sequence = 1010 |
+| parity bit = 1 | input sequence = 1011 |
+| parity bit = 0 | input sequence = 1100 |
+| parity bit = 1 | input sequence = 1101 |
+| parity bit = 1 | input sequence = 1110 |
+| parity bit = 0 | input sequence = 1111 |

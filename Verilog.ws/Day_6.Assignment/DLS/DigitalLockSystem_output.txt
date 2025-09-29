@@ -1,0 +1,16 @@
+| input_seq = 0000 | unlock = 0000 |
+| input_seq = 0001 | unlock = 0000 |
+| input_seq = 0010 | unlock = 0000 |
+| input_seq = 0011 | unlock = 0000 |
+| input_seq = 0100 | unlock = 0000 |
+| input_seq = 0101 | unlock = 0000 |
+| input_seq = 0110 | unlock = 0000 |
+| input_seq = 0111 | unlock = 0000 |
+| input_seq = 1000 | unlock = 0000 |
+| input_seq = 1001 | unlock = 0000 |
+| input_seq = 1010 | unlock = 1111 |
+| input_seq = 1011 | unlock = 1111 |
+| input_seq = 1100 | unlock = 0000 |
+| input_seq = 1101 | unlock = 0000 |
+| input_seq = 1110 | unlock = 1111 |
+| input_seq = 1111 | unlock = 1111 |

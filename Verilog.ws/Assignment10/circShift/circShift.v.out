@@ -1,0 +1,93 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001febbeb62f0 .scope module, "circShift_tb" "circShift_tb" 2 36;
+ .timescale 0 0;
+v000001febbbc6400_0 .var/i "file_handle", 31 0;
+v000001febbbc64a0_0 .var/i "i", 31 0;
+v000001febbbc6540_0 .var "in", 7 0;
+v000001febbbc65e0_0 .net "outL", 7 0, L_000001febbf12b30;  1 drivers
+v000001febbbc6680_0 .net "outR", 7 0, L_000001febbbc6720;  1 drivers
+S_000001febbeb6480 .scope module, "RL" "circShift" 2 42, 2 1 0, S_000001febbeb62f0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 8 "shiftedR";
+    .port_info 1 /OUTPUT 8 "shiftedL";
+    .port_info 2 /INPUT 8 "in_seq";
+P_000001febbeb7960 .param/l "N" 0 2 1, +C4<00000000000000000000000000001000>;
+v000001febbec44d0_0 .net "in_seq", 7 0, v000001febbbc6540_0;  1 drivers
+v000001febbec4570_0 .net "shiftedL", 7 0, L_000001febbf12b30;  alias, 1 drivers
+v000001febbec4610_0 .net "shiftedR", 7 0, L_000001febbbc6720;  alias, 1 drivers
+L_000001febbbc6720 .ufunc/vec4 TD_circShift_tb.RL.rightShift, 8, v000001febbbc6540_0 (v000001febbec42f0_0) S_000001febbeb6be0;
+L_000001febbf12b30 .ufunc/vec4 TD_circShift_tb.RL.leftShift, 8, v000001febbbc6540_0 (v000001febbbc6e20_0) S_000001febbeb69b0;
+S_000001febbeb69b0 .scope function.vec4.s8, "leftShift" "leftShift" 2 19, 2 19 0, S_000001febbeb6480;
+ .timescale 0 0;
+v000001febbbc6e20_0 .var "in_seq", 7 0;
+; Variable leftShift is vec4 return value of scope S_000001febbeb69b0
+v000001febbeb6b40_0 .var "temp", 0 0;
+TD_circShift_tb.RL.leftShift ;
+    %load/vec4 v000001febbbc6e20_0;
+    %parti/s 1, 7, 4;
+    %store/vec4 v000001febbeb6b40_0, 0, 1;
+    %load/vec4 v000001febbbc6e20_0;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %shiftl 4;
+    %ret/vec4 0, 0, 8;  Assign to leftShift (store_vec4_to_lval)
+    %load/vec4 v000001febbeb6b40_0;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %ret/vec4 0, 4, 1; Assign to leftShift (store_vec4_to_lval)
+    %end;
+S_000001febbeb6be0 .scope function.vec4.s8, "rightShift" "rightShift" 2 7, 2 7 0, S_000001febbeb6480;
+ .timescale 0 0;
+v000001febbec42f0_0 .var "in_seq", 7 0;
+; Variable rightShift is vec4 return value of scope S_000001febbeb6be0
+v000001febbec4430_0 .var "temp", 0 0;
+TD_circShift_tb.RL.rightShift ;
+    %load/vec4 v000001febbec42f0_0;
+    %parti/s 1, 0, 2;
+    %store/vec4 v000001febbec4430_0, 0, 1;
+    %load/vec4 v000001febbec42f0_0;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %shiftr 4;
+    %ret/vec4 0, 0, 8;  Assign to rightShift (store_vec4_to_lval)
+    %load/vec4 v000001febbec4430_0;
+    %ix/load 4, 7, 0;
+    %flag_set/imm 4, 0;
+    %ret/vec4 0, 4, 1; Assign to rightShift (store_vec4_to_lval)
+    %end;
+    .scope S_000001febbeb62f0;
+T_2 ;
+    %vpi_func 2 45 "$fopen" 32, "CIRCHSHIFT_ouutput.txt", "w" {0 0 0};
+    %store/vec4 v000001febbbc6400_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001febbbc64a0_0, 0, 32;
+T_2.0 ;
+    %load/vec4 v000001febbbc64a0_0;
+    %cmpi/s 128, 0, 32;
+    %jmp/0xz T_2.1, 5;
+    %load/vec4 v000001febbbc64a0_0;
+    %pad/s 8;
+    %store/vec4 v000001febbbc6540_0, 0, 8;
+    %delay 10, 0;
+    %vpi_call 2 48 "$fdisplay", v000001febbbc6400_0, "| in=%b | Rshift=%b | Lshift=%b |", v000001febbbc6540_0, v000001febbbc6680_0, v000001febbbc65e0_0 {0 0 0};
+    %load/vec4 v000001febbbc64a0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001febbbc64a0_0, 0, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %vpi_call 2 50 "$fclose", v000001febbbc6400_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "circShift.v";

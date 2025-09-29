@@ -1,0 +1,8 @@
+| in_seq=000 | majority=0 |
+| in_seq=001 | majority=0 |
+| in_seq=010 | majority=0 |
+| in_seq=011 | majority=1 |
+| in_seq=100 | majority=0 |
+| in_seq=101 | majority=1 |
+| in_seq=110 | majority=1 |
+| in_seq=111 | majority=1 |

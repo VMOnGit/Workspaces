@@ -1,0 +1,67 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib64/ivl/system.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib64/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib64/ivl/va_math.vpi";
+S_0x55cb6deba850 .scope module, "tb_pEnco42" "tb_pEnco42" 2 1;
+ .timescale 0 0;
+v0x55cb6decdd80_0 .var "d", 3 0;
+v0x55cb6decde40_0 .net "out", 1 0, L_0x55cb6dece410;  1 drivers
+S_0x55cb6deba9e0 .scope module, "pE" "pEnco42" 2 6, 3 1 0, S_0x55cb6deba850;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d";
+    .port_info 1 /OUTPUT 2 "out";
+L_0x55cb6dece080 .functor NOT 1, L_0x55cb6decdfe0, C4<0>, C4<0>, C4<0>;
+L_0x55cb6dece210 .functor AND 1, L_0x55cb6dece080, L_0x55cb6dece170, C4<1>, C4<1>;
+L_0x55cb6dece300 .functor OR 1, L_0x55cb6decdf10, L_0x55cb6dece210, C4<0>, C4<0>;
+L_0x55cb6dece700 .functor OR 1, L_0x55cb6dece580, L_0x55cb6dece620, C4<0>, C4<0>;
+v0x55cb6dea99a0_0 .net *"_ivl_10", 0 0, L_0x55cb6dece210;  1 drivers
+v0x55cb6decd430_0 .net *"_ivl_12", 0 0, L_0x55cb6dece300;  1 drivers
+v0x55cb6decd510_0 .net *"_ivl_18", 0 0, L_0x55cb6dece580;  1 drivers
+v0x55cb6decd5d0_0 .net *"_ivl_20", 0 0, L_0x55cb6dece620;  1 drivers
+v0x55cb6decd6b0_0 .net *"_ivl_21", 0 0, L_0x55cb6dece700;  1 drivers
+v0x55cb6decd7e0_0 .net *"_ivl_3", 0 0, L_0x55cb6decdf10;  1 drivers
+v0x55cb6decd8c0_0 .net *"_ivl_5", 0 0, L_0x55cb6decdfe0;  1 drivers
+v0x55cb6decd9a0_0 .net *"_ivl_6", 0 0, L_0x55cb6dece080;  1 drivers
+v0x55cb6decda80_0 .net *"_ivl_9", 0 0, L_0x55cb6dece170;  1 drivers
+v0x55cb6decdb60_0 .net "d", 3 0, v0x55cb6decdd80_0;  1 drivers
+v0x55cb6decdc40_0 .net "out", 1 0, L_0x55cb6dece410;  alias, 1 drivers
+L_0x55cb6decdf10 .part v0x55cb6decdd80_0, 3, 1;
+L_0x55cb6decdfe0 .part v0x55cb6decdd80_0, 2, 1;
+L_0x55cb6dece170 .part v0x55cb6decdd80_0, 1, 1;
+L_0x55cb6dece410 .concat8 [ 1 1 0 0], L_0x55cb6dece300, L_0x55cb6dece700;
+L_0x55cb6dece580 .part v0x55cb6decdd80_0, 2, 1;
+L_0x55cb6dece620 .part v0x55cb6decdd80_0, 3, 1;
+    .scope S_0x55cb6deba850;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "tb_pEnco42.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55cb6deba850 {0 0 0};
+    %vpi_call 2 10 "$monitor", "d=%b out=%b", v0x55cb6decdd80_0, v0x55cb6decde40_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55cb6decdd80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55cb6decdd80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x55cb6decdd80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x55cb6decdd80_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x55cb6decdd80_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_pEnco42.v";
+    "pEnco42.v";

@@ -1,0 +1,96 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002272019b440 .scope module, "fibo_tb" "fibo_tb" 2 46;
+ .timescale 0 0;
+v0000022720230150_0 .var "A", 0 0;
+v00000227202301f0_0 .net "B", 0 0, L_0000022720230290;  1 drivers
+S_000002272019b5d0 .scope module, "DUT" "fibo" 2 50, 2 1 0, S_000002272019b440;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "out";
+v0000022720230010_0 .net "a", 0 0, v0000022720230150_0;  1 drivers
+v00000227202300b0_0 .net "out", 0 0, L_0000022720230290;  alias, 1 drivers
+L_0000022720230290 .ufunc/vec4 TD_fibo_tb.DUT.fibona, 1, v0000022720230150_0 (v000002272019d900_0) S_000002272019d590;
+S_000002272019d590 .scope autofunction.vec4.s1, "fibona" "fibona" 2 7, 2 7 0, S_000002272019b5d0;
+ .timescale 0 0;
+v000002272019bd60_0 .var "F_prev_1", 0 0;
+v000002272019be00_0 .var "F_prev_2", 0 0;
+v000002272019d720_0 .var "F_temp", 0 0;
+; Variable fibona is vec4 return value of scope S_000002272019d590
+v000002272019d860_0 .var/i "i", 31 0;
+v000002272019d900_0 .var "index", 0 0;
+TD_fibo_tb.DUT.fibona ;
+    %load/vec4 v000002272019d900_0;
+    %pad/u 32;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_0.0, 4;
+    %pushi/vec4 0, 0, 1;
+    %ret/vec4 0, 0, 1;  Assign to fibona (store_vec4_to_lval)
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000002272019d900_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 1, 0, 1;
+    %ret/vec4 0, 0, 1;  Assign to fibona (store_vec4_to_lval)
+    %jmp T_0.3;
+T_0.2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002272019be00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002272019bd60_0, 0, 1;
+    %pushi/vec4 2, 0, 32;
+    %store/vec4 v000002272019d860_0, 0, 32;
+T_0.4 ;
+    %load/vec4 v000002272019d860_0;
+    %load/vec4 v000002272019d900_0;
+    %pad/u 32;
+    %cmp/u;
+    %flag_or 5, 4;
+    %jmp/0xz T_0.5, 5;
+    %load/vec4 v000002272019bd60_0;
+    %store/vec4 v000002272019d720_0, 0, 1;
+    %load/vec4 v000002272019bd60_0;
+    %load/vec4 v000002272019be00_0;
+    %add;
+    %store/vec4 v000002272019bd60_0, 0, 1;
+    %load/vec4 v000002272019d720_0;
+    %store/vec4 v000002272019be00_0, 0, 1;
+    %load/vec4 v000002272019d860_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000002272019d860_0, 0, 32;
+    %jmp T_0.4;
+T_0.5 ;
+    %load/vec4 v000002272019bd60_0;
+    %ret/vec4 0, 0, 1;  Assign to fibona (store_vec4_to_lval)
+T_0.3 ;
+T_0.1 ;
+    %end;
+    .scope S_000002272019b440;
+T_1 ;
+    %vpi_call 2 53 "$display", "--- Unsized (1-Bit) Fibonacci Test ---" {0 0 0};
+    %vpi_call 2 54 "$display", "WARNING: Output will be truncated to 1 bit (0 or 1)." {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022720230150_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 57 "$display", "A=%0d, F_%0d = %0d", v0000022720230150_0, v0000022720230150_0, v00000227202301f0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022720230150_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 60 "$display", "A=%0d, F_%0d = %0d", v0000022720230150_0, v0000022720230150_0, v00000227202301f0_0 {0 0 0};
+    %vpi_call 2 66 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fibonacci.v";

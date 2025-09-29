@@ -1,0 +1,40 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib64/ivl/system.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib64/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib64/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib64/ivl/va_math.vpi";
+S_0x560c61868d90 .scope module, "pEnco42" "pEnco42" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d";
+    .port_info 1 /OUTPUT 2 "out";
+L_0x560c6188aff0 .functor NOT 1, L_0x560c6188af20, C4<0>, C4<0>, C4<0>;
+L_0x560c6188b150 .functor AND 1, L_0x560c6188aff0, L_0x560c6188b0b0, C4<1>, C4<1>;
+L_0x560c6188b290 .functor OR 1, L_0x560c6188ae50, L_0x560c6188b150, C4<0>, C4<0>;
+L_0x560c6188b6d0 .functor OR 1, L_0x560c6188b4c0, L_0x560c6188b5f0, C4<0>, C4<0>;
+v0x560c61868f20_0 .net *"_ivl_10", 0 0, L_0x560c6188b150;  1 drivers
+v0x560c6188a500_0 .net *"_ivl_12", 0 0, L_0x560c6188b290;  1 drivers
+v0x560c6188a5e0_0 .net *"_ivl_18", 0 0, L_0x560c6188b4c0;  1 drivers
+v0x560c6188a6a0_0 .net *"_ivl_20", 0 0, L_0x560c6188b5f0;  1 drivers
+v0x560c6188a780_0 .net *"_ivl_21", 0 0, L_0x560c6188b6d0;  1 drivers
+v0x560c6188a8b0_0 .net *"_ivl_3", 0 0, L_0x560c6188ae50;  1 drivers
+v0x560c6188a990_0 .net *"_ivl_5", 0 0, L_0x560c6188af20;  1 drivers
+v0x560c6188aa70_0 .net *"_ivl_6", 0 0, L_0x560c6188aff0;  1 drivers
+v0x560c6188ab50_0 .net *"_ivl_9", 0 0, L_0x560c6188b0b0;  1 drivers
+o0x7f56d98911c8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x560c6188ac30_0 .net "d", 3 0, o0x7f56d98911c8;  0 drivers
+v0x560c6188ad10_0 .net "out", 1 0, L_0x560c6188b3a0;  1 drivers
+L_0x560c6188ae50 .part o0x7f56d98911c8, 2, 1;
+L_0x560c6188af20 .part o0x7f56d98911c8, 1, 1;
+L_0x560c6188b0b0 .part o0x7f56d98911c8, 0, 1;
+L_0x560c6188b3a0 .concat8 [ 1 1 0 0], L_0x560c6188b6d0, L_0x560c6188b290;
+L_0x560c6188b4c0 .part o0x7f56d98911c8, 2, 1;
+L_0x560c6188b5f0 .part o0x7f56d98911c8, 1, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "pEnco42.v";

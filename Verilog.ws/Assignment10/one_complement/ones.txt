@@ -1,0 +1,32 @@
+1's Complement of 0000	 is 1111
+ 
+1's Complement of 0001	 is 1110
+ 
+1's Complement of 0010	 is 1101
+ 
+1's Complement of 0011	 is 1100
+ 
+1's Complement of 0100	 is 1011
+ 
+1's Complement of 0101	 is 1010
+ 
+1's Complement of 0110	 is 1001
+ 
+1's Complement of 0111	 is 1000
+ 
+1's Complement of 1000	 is 0111
+ 
+1's Complement of 1001	 is 0110
+ 
+1's Complement of 1010	 is 0101
+ 
+1's Complement of 1011	 is 0100
+ 
+1's Complement of 1100	 is 0011
+ 
+1's Complement of 1101	 is 0010
+ 
+1's Complement of 1110	 is 0001
+ 
+1's Complement of 1111	 is 0000
+ 

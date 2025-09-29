@@ -1,0 +1,54 @@
+$date
+	Thu Sep 18 23:06:08 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_traffic_controller $end
+$var wire 3 ! next_state [2:0] $end
+$var reg 1 " cur_state $end
+$var reg 1 # prev_state $end
+$var integer 32 $ i [31:0] $end
+$scope module rm1 $end
+$var wire 1 " cur_state $end
+$var wire 1 # prev_state $end
+$var reg 3 % next_state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 %
+b0 $
+0#
+0"
+b1 !
+$end
+#5
+b10 !
+b10 %
+1#
+b1 $
+#10
+b0 !
+b0 %
+1"
+b10 $
+#15
+b11 $
+#20
+b11 !
+b11 %
+0#
+b100 $
+#25
+b0 !
+b0 %
+1#
+b101 $

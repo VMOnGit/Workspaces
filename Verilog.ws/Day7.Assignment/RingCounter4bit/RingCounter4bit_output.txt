@@ -1,0 +1,14 @@
+| Out = 0001 | 	| reset = 0 |	
+| Out = 0010 | 	| reset = 0 |	
+| Out = 0100 | 	| reset = 0 |	
+| Out = 1000 | 	| reset = 0 |	
+| Out = 0001 | 	| reset = 0 |	
+| Out = 0010 | 	| reset = 0 |	
+| Out = 0010 | 	| reset = 1 |	
+| Out = 0001 | 	| reset = 1 |	
+| Out = 0001 | 	| reset = 0 |	
+| Out = 0010 | 	| reset = 0 |	
+| Out = 0100 | 	| reset = 0 |	
+| Out = 1000 | 	| reset = 0 |	
+| Out = 0001 | 	| reset = 0 |	
+| Out = 0010 | 	| reset = 0 |	

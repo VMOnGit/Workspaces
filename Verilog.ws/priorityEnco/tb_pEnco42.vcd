@@ -1,0 +1,47 @@
+$date
+	Sat Sep 20 23:17:14 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_pEnco42 $end
+$var wire 2 ! out [1:0] $end
+$var reg 4 " d [3:0] $end
+$scope module pE $end
+$var wire 4 # d [3:0] $end
+$var wire 2 $ out [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1 "
+b1 #
+#20
+b1 !
+b1 $
+b10 "
+b10 #
+#30
+b10 !
+b10 $
+b100 "
+b100 #
+#40
+b11 !
+b11 $
+b1000 "
+b1000 #
+#50

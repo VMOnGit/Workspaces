@@ -1,0 +1,51 @@
+$date
+	Thu Sep 18 22:09:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_security_test $end
+$var wire 1 ! AL $end
+$var reg 1 " KC $end
+$var reg 1 # LOCK $end
+$var reg 1 $ PIN $end
+$var integer 32 % i [31:0] $end
+$scope module rm1 $end
+$var wire 1 " KC $end
+$var wire 1 # LOCK $end
+$var wire 1 $ PIN $end
+$var reg 1 ! AL $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 %
+0$
+0#
+0"
+0!
+$end
+#5
+1!
+1#
+1$
+b1 %
+#10
+0!
+1"
+b10 %
+#15
+1!
+0$
+b11 %
+#20
+b100 %
+#25
+b101 %

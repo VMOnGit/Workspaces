@@ -1,0 +1,16 @@
+ip=     0 op =      x
+ip=     1 op =      0
+ip=     2 op =      1
+ip=     3 op =      1
+ip=     4 op =      2
+ip=     5 op =      3
+ip=     6 op =      5
+ip=     7 op =      8
+ip=     8 op =     13
+ip=     9 op =     21
+ip=    10 op =     34
+ip=    11 op =     55
+ip=    12 op =     89
+ip=    13 op =    144
+ip=    14 op =    233
+ip=    15 op =    377

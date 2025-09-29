@@ -1,0 +1,2 @@
+| in_seq = 4 | parity bit = 0 |
+| in_seq = f | parity bit = 1 |
