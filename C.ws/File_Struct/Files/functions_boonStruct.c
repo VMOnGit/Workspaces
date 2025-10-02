@@ -7,7 +7,8 @@ void deallocate(BOON **, int);
 void modify(BOON **, int);
 void menu();
 void writetofile(BOON **, int);
-void autoTest();
+void readfromFile(BOON **, int);
+void autoTest(int);
 
 
 void menu(){
@@ -33,7 +34,8 @@ void menu(){
                 modify(ptr, numBooks);
                 break;
             case 4:
-                autoTest();
+                autoTest(numBooks);
+                break;
             case 5:
                 writetofile(ptr, numBooks);
                 deallocate(ptr, numBooks);
@@ -168,43 +170,110 @@ void writetofile(BOON **arr, int size)
     printf("Book details written to books.txt\n");
 }
 
-void autoTest()
+void readfromFile(BOON **arr, int size)
 {
-    int size = 3;
-    BOON **arr = allocate(size);
+    FILE *fptr = NULL;
+    char buffer[256]; // Buffer for reading file lines
+    int i = 0;
     
-    // Predefined book details
-    arr[0]->bid = 101;
-    strcpy(arr[0]->bname, "The Great Gatsby");
-    strcpy(arr[0]->aname, "F. Scott Fitzgerald");
-    arr[0]->price = 10.99;
+    // Attempt to open the file for reading
+    fptr = fopen("books.txt", "r");
     
-    arr[1]->bid = 102;
-    strcpy(arr[1]->bname, "1984");
-    strcpy(arr[1]->aname, "George Orwell");
-    arr[1]->price = 8.99;
-    
-    arr[2]->bid = 103;
-    strcpy(arr[2]->bname, "To Kill a Mockingbird");
-    strcpy(arr[2]->aname, "Harper Lee");
-    arr[2]->price = 12.49;
-    
-    printf("Automated Test Case:\n");
-    display(arr, size);
-    
-    // Modify the price of the second book
-    printf("\nModifying the price of book with ID 102...\n");
-    for(int i = 0; i < size; i++)
+    if (fptr == NULL)
     {
-        if(arr[i]->bid == 102)
+        printf("Error: Could not open books.txt for reading.\n");
+        deallocate(arr, size);
+        return;
+    }
+
+    printf("Reading book details from books.txt...\n");
+    /*
+    fscanf(fptr, "%d,%49[^,],%49[^,],%f",&arr[i]->bid,arr[i]->bname,&arr[i]->aname, &arr[i]->price) == 4)
+    The format specifier should match the format in the text file  
+        [^,] is used to skip commas as my code writes comma seperated data 
+        Sample data:
+            101,Book one,Auth one,1.00
+            102,Book Two,Auth two,2.00
+            103,Book Three,Auth three,3.00
+    */
+                                
+
+
+    while (i < size && fscanf(fptr, "%d,%49[^,],%49[^,],%f", 
+                             &arr[i]->bid, 
+                             arr[i]->bname, 
+                             &arr[i]->aname, 
+                             &arr[i]->price) == 4)
+    {
+         
+        printf("Read: ID %d, Name %s\n", arr[i]->bid, arr[i]->bname);
+        i++;
+    }
+    
+    fclose(fptr);
+}
+void autoTest(int size)
+{
+    
+    
+    BOON **arr = allocate(size);
+
+    // Predefined book details
+
+    arr[0]->bid = 101;
+
+    strcpy(arr[0]->bname, "TheGreatGatsby");
+
+    strcpy(arr[0]->aname, "F.ScottFitzgerald");
+
+    arr[0]->price = 10.99;
+
+    arr[1]->bid = 102;
+
+    strcpy(arr[1]->bname, "1984");
+
+    strcpy(arr[1]->aname, "GeorgeOrwell");
+
+    arr[1]->price = 8.99;
+
+    arr[2]->bid = 103;
+
+    strcpy(arr[2]->bname, "ToKillaMockingbird");
+
+    strcpy(arr[2]->aname, "HarperLee");
+
+    arr[2]->price = 12.49;
+
+    writetofile(arr,size); //Write test case data to file
+    deallocate(arr, size); //Deallocate the memory used for initial data
+    arr = NULL;
+    //printf("Automated Test Case:\n");
+
+    
+    BOON **arr1 = allocate(size);
+
+    readfromFile(arr1, size); //read test case data from file
+    
+    // --- Verification Logic ---
+    printf("\nData in file is:\n");
+    display(arr1, size);
+    
+    // Modify the price of the second book (or book with ID 102)
+    printf("\nModifying the price of book with ID 102...\n");
+    for(int j = 0; j < size; j++)
+    {
+        printf("%d",arr1[j]->bid);
+        if(arr1[j]->bid == 102)
         {
-            arr[i]->price = 9.99; // New price
+            arr1[j]->price = 9.99; // New price
+            printf("Book 102 price updated.\n");
             break;
         }
     }
     
-    printf("After Modification:\n");
-    display(arr, size);
+    printf("\nAfter Modification:\n");
+    display(arr1, size);
+    deallocate(arr1, size); //Deallocate the memory used for read data
     
-    deallocate(arr, size);
 }
+
