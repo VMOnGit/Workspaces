@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -10,7 +11,7 @@ typedef struct STORE
     float price;
 }STORE;
 
-void Menu(STORE **, int);
+void Menu();
 void Modify(STORE **, int);
 void Display(STORE **, int);
 void accept(STORE **, int);
@@ -19,19 +20,11 @@ void deallocate(STORE **, int);
 
 int main()
 {
-    char inp[10];
-    int numBooks;
-    STORE **ptr = NULL;
-    
-    printf("Enter the number of books: ");
-    fgets(inp, sizeof(inp), stdin);
-    sscanf(inp, "%d", &numBooks);
 
-    ptr = allocate(numBooks);
-    Menu(ptr, numBooks);
     
-    // Free the allocated memory
-    deallocate(ptr, numBooks);
+    Menu();
+
+    
 
     return 0;
 }
@@ -66,10 +59,19 @@ void deallocate(STORE **arr, int row_size)
     free(arr);
 }
 
-void Menu(STORE **store_array_ptr, int row_size)
+void Menu()
 {
     char inp[10];
-    int choice;
+    int choice,row_size;
+
+    STORE **store_array_ptr  = NULL;
+    
+    printf("Enter the number of books: ");
+    fgets(inp, sizeof(inp), stdin);
+    sscanf(inp, "%d", &row_size);
+
+    
+    store_array_ptr = allocate(row_size);
 
     while(1)
     {
@@ -90,6 +92,7 @@ void Menu(STORE **store_array_ptr, int row_size)
                 Modify(store_array_ptr, row_size);
                 break;
             case 4:
+                deallocate(store_array_ptr, row_size);
                 return;
             default:
                 printf("Invalid choice. Please try again.\n");
