@@ -32,7 +32,3 @@ Verilog.ws/
 - [Verilog Documentation](https://verilog.com/)
 - [Icarus Verilog](http://iverilog.icarus.com/)
 - [EDA Playground](https://www.edaplayground.com/)
-
-## License
-
-This workspace is distributed under the [MIT License](../LICENSE).
