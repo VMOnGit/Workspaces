@@ -9,6 +9,7 @@ Verilog.ws/
 ├── .gitignore
 ├── LED_Peripheral/
 ├── LED_ROM/
+├── Switch_Level_Models/
 ├── Light_Controller/
 └── Synchronous_FIFO/
 ```
@@ -18,6 +19,7 @@ Verilog.ws/
 - **LED_Peripheral/**: Example modules and logic for LED control peripherals.
 - **LED_ROM/**: Sample ROM components or LED ROM interface designs.
 - **Light_Controller/**: Verilog modules for light/LED controller logic and testbenches.
+- **Switch_Level_Models/**: Verilog Code containing switch level models for basic modules
 - **Synchronous_FIFO/**: FIFO buffer implementations and associated testbenches.
 
 ## Getting Started
