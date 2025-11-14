@@ -34,6 +34,7 @@ This repository contains multiple main workspaces:
 - Example subfolders:
   - `LED_Peripheral/`: Example modules and logic for LED control peripherals.
   - `LED_ROM/`: Sample ROM components or LED ROM interface designs.
+  - `Switch_Level_Models/` : Switch Level Models for basic modules
   - `Light_Controller/`: Verilog modules for light/LED controller logic and testbenches.
   - `Synchronous_FIFO/`: FIFO buffer implementations and associated testbenches.
 
