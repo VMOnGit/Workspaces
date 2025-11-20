@@ -40,9 +40,9 @@ module PROGMEM(
         PROM[5]  <= 8'h14;
         PROM[6]  <= 8'h12;
         PROM[7]  <= 8'h15;
-        PROM[8]  <= 8'h00;
-        PROM[9]  <= 8'h00;
-        PROM[10] <= 8'h00;
+        PROM[8]  <= 8'h05;
+        PROM[9]  <= 8'hF5;
+        PROM[10] <= 8'hE0;
         PROM[11] <= 8'hFF;
         PROM[12] <= 8'h17;
         PROM[13] <= 8'h05;
@@ -59,10 +59,10 @@ module PROGMEM(
         PROM[34] <= 8'h14;
         PROM[35] <= 8'hAA;
         PROM[36] <= 8'h15;
-        PROM[37] <= 8'h00;
-        PROM[38] <= 8'h00;
-        PROM[39] <= 8'h00;
-        PROM[40] <= 8'h00;
+        PROM[37] <= 8'h05;
+        PROM[38] <= 8'hF5;
+        PROM[39] <= 8'hE0;
+        PROM[40] <= 8'hFF;
         PROM[41] <= 8'h17;
         PROM[42] <= 8'h05;
         PROM[43] <= 8'hF5;
@@ -87,6 +87,7 @@ module PROGMEM(
     
 
 endmodule
+
 
 
 
